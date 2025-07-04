@@ -1,0 +1,426 @@
+:root {
+    --primary: #4f46e5;
+    --secondary: #0ea5e9;
+    --success: #22c55e;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --background: #f8fafc;
+    --card: #ffffff;
+}
+
+.club-details-container {
+    background: var(--background);
+    min-height: 100vh;
+}
+
+/* Club Header */
+.club-header {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.club-cover-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.club-cover-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+}
+
+.club-info-header {
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    position: relative;
+    margin-top: -100px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+}
+
+.club-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    background-size: cover;
+    background-position: center;
+    margin-right: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.club-basic-info {
+    flex: 1;
+}
+
+.club-basic-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.club-basic-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.club-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.club-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Social Links Styles */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+}
+
+.social-btn i {
+    font-size: 1.2rem;
+}
+
+.social-btn.linkedin {
+    background: #0077b5;
+}
+
+.social-btn.linkedin:hover {
+    background: #006396;
+}
+
+.social-btn.whatsapp {
+    background: #25D366;
+}
+
+.social-btn.whatsapp:hover {
+    background: #20bd5a;
+}
+
+/* Content Tabs */
+.content-tabs {
+    display: flex;
+    gap: 1rem;
+    padding: 0 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    border: none;
+    background: none;
+    color: var(--text-light);
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tab-btn.active {
+    color: var(--primary);
+}
+
+.tab-btn.active::after {
+    transform: scaleX(1);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    padding: 2rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Grid Layouts */
+.club-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.info-card p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-card i {
+    color: var(--primary);
+}
+
+/* Leaders Grid */
+.leaders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.leader-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.leader-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.leader-info h4 {
+    color: var(--text);
+    margin-bottom: 0.25rem;
+}
+
+.leader-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Events Grid */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.event-card {
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.event-details {
+    padding: 1.5rem;
+}
+
+/* Activities Timeline */
+.activities-timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary);
+}
+
+/* Members Grid */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.member-card {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .club-info-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .club-logo {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .club-stats {
+        justify-content: center;
+    }
+
+    .content-tabs {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+
+    .social-links {
+        margin: 1rem 0 0 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-btn {
+        flex: 1;
+        justify-content: center;
+        max-width: 160px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Achievements Section */
+.achievements-section {
+    margin-top: 3rem;
+}
+
+.achievements-section h2 {
+    color: var(--text);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievement-card {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border-left: 4px solid var(--primary);
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-card i {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.achievement-card h3 {
+    color: var(--text);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.achievement-date {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    display: block;
+} 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - KARE SPHERE</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-left">
+                <h2>KARE SPHERE</h2>
+                <span class="admin-badge">Admin Panel</span>
+            </div>
+            <div class="nav-right">
+                <div class="user-profile" id="adminProfileDropdown">
+                    <img src="" alt="Admin" id="adminProfilePic" class="profile-pic">
+                    <span id="adminName"></span>
+                    <div class="dropdown-content">
+                        <a href="events.html" target="_blank">View User Site</a>
+                        <a href="#" onclick="adminSignOut(); return false;">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <div class="admin-header">
+            <div class="admin-title">
+                <h1>Admin Dashboard</h1>
+            </div>
+            <div class="admin-nav">
+                <a href="admin-dashboard.html" class="admin-nav-item active">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="admin-events.html" class="admin-nav-item">
+                    <i class="fas fa-calendar-alt"></i> Events
+                </a>
+            </div>
+        </div>
+
+        <div class="admin-content">
+            <div class="admin-overview">
+                <div class="admin-welcome">
+                    <h2>Welcome to the Admin Panel, <span id="adminWelcomeName"></span>!</h2>
+                    <p>From here, you can manage events and content for KARE SPHERE. Your changes will be reflected on the user-facing site.</p>
+                </div>
+                
+                <div class="admin-stats-grid">
+                    <div class="admin-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Events</h3>
+                            <p id="totalEventsCount">...</p>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-hourglass-half"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Upcoming Events</h3>
+                            <p id="upcomingEventsCount">...</p>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Ongoing Events</h3>
+                            <p id="ongoingEventsCount">...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="quick-actions-grid">
+                        <a href="admin-events.html?new=true" class="quick-action-card">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Add New Event</span>
+                        </a>
+                        <a href="admin-events.html" class="quick-action-card">
+                            <i class="fas fa-edit"></i>
+                            <span>Manage Events</span>
+                        </a>
+                        <a href="events.html" target="_blank" class="quick-action-card">
+                            <i class="fas fa-eye"></i>
+                            <span>View Public Events</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="admin-recent-section">
+                    <h3>Recent Events</h3>
+                    <div class="admin-recent-list" id="recentEventsList">
+                        <div class="loading-indicator">Loading recent events...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin-auth.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html> 

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARE SPHERE - Your Academic Hub</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-left">
+                <h2>KARE SPHERE</h2>
+            </div>
+            <div class="nav-right">
+                <div class="user-profile" id="profileDropdown">
+                    <img src="" alt="Profile" id="userProfilePic" class="profile-pic">
+                    <span id="userName"></span>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="editProfile(); return false;">Edit Profile</a>
+                        <a href="#" onclick="signOut(); return false;">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="intro-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1>Welcome to KARE SPHERE</h1>
+                <p>Your all-in-one platform for academic excellence and career growth</p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Events</h3>
+                        <p>Stay updated with campus events, workshops, and seminars. Never miss an important opportunity.</p>
+                        <a href="events.html" class="feature-link">Explore Events</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Clubs</h3>
+                        <p>Join student clubs, participate in activities, and develop your skills through peer learning.</p>
+                        <a href="clubs.html" class="feature-link">Discover Clubs</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-road"></i>
+                        <h3>Career Guidance</h3>
+                        <p>Get expert guidance on career paths, internships, and professional development.</p>
+                        <a href="career-guidance.html" class="feature-link">Explore Careers</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <h2>About KARE SPHERE</h2>
+                    <p>KARE SPHERE is designed to enhance your academic journey at KARE. We provide tools and resources to help you:</p>
+                    <ul class="about-list">
+                        <li>Stay connected with campus activities</li>
+                        <li>Develop professional skills</li>
+                        <li>Build meaningful connections</li>
+                        <li>Plan your career path</li>
+                        <li>Access academic resources</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Started Section -->
+        <section class="getting-started-section">
+            <div class="container">
+                <h2>Getting Started</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Complete Your Profile</h3>
+                        <p>Update your academic details and interests</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Explore Features</h3>
+                        <p>Browse through events, clubs, and career resources</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Get Involved</h3>
+                        <p>Join clubs and participate in campus activities</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/db-service.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html> 

@@ -1,0 +1,41 @@
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <img src="Logo.png" alt="KARE SPHERE" class="header-logo">
+        </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/dashboard.html" class="nav-link">Home</a></li>
+                <li><a href="/events.html" class="nav-link">Events</a></li>
+                <li><a href="/clubs.html" class="nav-link">Clubs</a></li>
+            </ul>
+        </nav>
+
+        <div class="profile-section">
+            <div class="profile-circle" id="profileTrigger">
+                <img src="" alt="Profile" id="headerProfilePic">
+                <div class="profile-dropdown">
+                    <div class="dropdown-header">
+                        <img src="" alt="Profile" id="dropdownProfilePic">
+                        <div class="user-info">
+                            <span id="userName"></span>
+                            <span id="userEmail" class="user-email"></span>
+                        </div>
+                    </div>
+                    <div class="dropdown-body">
+                        <a href="/profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i> View Profile
+                        </a>
+                        <a href="/settings.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <button onclick="signOut()" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i> Sign Out
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> 

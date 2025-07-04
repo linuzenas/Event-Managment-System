@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Your Profile - KARE SPHERE</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="profile-setup-container">
+        <div class="setup-header">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="setupProgress"></div>
+                </div>
+                <div class="step-indicator">Step <span id="currentStep">1</span> of 3</div>
+            </div>
+        </div>
+        
+        <div class="setup-form">
+            <!-- Step 1: Basic Info -->
+            <div class="setup-step" id="step1">
+                <h2>Basic Information</h2>
+                
+                <div class="profile-picture-upload">
+                    <div class="picture-preview">
+                        <img src="" alt="Profile Picture" id="profileImage">
+                        <div class="upload-overlay">
+                            <i class="fas fa-camera"></i>
+                            <span>Change Picture</span>
+                        </div>
+                    </div>
+                    <input type="file" id="profilePicture" accept="image/*" style="display: none;">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" class="form-input" placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" class="form-input">
+                        <option value="">Select Department</option>
+                        <option value="CSE">Computer Science Engineering</option>
+                        <option value="ECE">Electronics & Communication</option>
+                        <option value="MECH">Mechanical Engineering</option>
+                        <option value="IT">Information Technology</option>
+                        <option value="BME">Bio-Medical Engineering</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="year">Year of Study</label>
+                    <select id="year" class="form-input">
+                        <option value="">Select Year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                    </select>
+                </div>
+                
+                <div class="button-group">
+                    <button class="next-btn" onclick="nextStep()">Next</button>
+                </div>
+            </div>
+            
+            <!-- Step 2: Interests -->
+            <div class="setup-step" id="step2" style="display: none;">
+                <h2>Your Interests</h2>
+                <p>Select topics that interest you</p>
+                
+                <div class="interests-grid">
+                    <div class="interest-category">
+                        <h3>Technical</h3>
+                        <div class="interest-tags">
+                            <label class="tag"><input type="checkbox" value="programming"> Programming</label>
+                            <label class="tag"><input type="checkbox" value="ai-ml"> AI & ML</label>
+                            <label class="tag"><input type="checkbox" value="web-dev"> Web Development</label>
+                            <label class="tag"><input type="checkbox" value="cybersecurity"> Cybersecurity</label>
+                            <label class="tag"><input type="checkbox" value="robotics"> Robotics</label>
+                        </div>
+                    </div>
+                    <div class="interest-category">
+                        <h3>Non-Technical</h3>
+                        <div class="interest-tags">
+                            <label class="tag"><input type="checkbox" value="sports"> Sports</label>
+                            <label class="tag"><input type="checkbox" value="arts"> Arts</label>
+                            <label class="tag"><input type="checkbox" value="literature"> Literature</label>
+                            <label class="tag"><input type="checkbox" value="music"> Music</label>
+                            <label class="tag"><input type="checkbox" value="photography"> Photography</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button class="back-btn" onclick="previousStep()">Back</button>
+                    <button class="next-btn" onclick="nextStep()">Next</button>
+                </div>
+            </div>
+            
+            <!-- Step 3: Preferences -->
+            <div class="setup-step" id="step3" style="display: none;">
+                <h2>Your Preferences</h2>
+                <p>Customize your experience</p>
+                
+                <div class="preference-section">
+                    <h3>Content Preferences</h3>
+                    <p>What would you like to see more of?</p>
+                    
+                    <div class="preference-options">
+                        <label class="preference-option">
+                            <input type="checkbox" value="events">
+                            <i class="fas fa-calendar"></i>
+                            <span>Events</span>
+                        </label>
+                        <label class="preference-option">
+                            <input type="checkbox" value="academic">
+                            <i class="fas fa-book"></i>
+                            <span>Academic</span>
+                        </label>
+                        <label class="preference-option">
+                            <input type="checkbox" value="career">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Career</span>
+                        </label>
+                        <label class="preference-option">
+                            <input type="checkbox" value="clubs">
+                            <i class="fas fa-users"></i>
+                            <span>Clubs</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="notification-preferences">
+                    <h3>Notification Preferences</h3>
+                    <div class="notification-options">
+                        <label class="switch">
+                            <input type="checkbox" id="emailNotifications">
+                            <span class="slider round"></span>
+                            <span class="label">Email Notifications</span>
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" id="eventReminders">
+                            <span class="slider round"></span>
+                            <span class="label">Event Reminders</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button class="back-btn" onclick="previousStep()">Back</button>
+                    <button class="complete-btn" onclick="completeSetup()">Complete Setup</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Message display area -->
+        <div class="message-container"></div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/db-service.js"></script>
+    <script src="js/profile-setup.js"></script>
+    
+    <script>
+        // Initialize profile image from Google account
+        document.addEventListener('DOMContentLoaded', () => {
+            const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+            if (userInfo && userInfo.picture) {
+                document.getElementById('profileImage').src = userInfo.picture;
+            }
+            
+            // Setup profile picture upload
+            const picturePreview = document.querySelector('.picture-preview');
+            const fileInput = document.getElementById('profilePicture');
+            
+            picturePreview.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files && e.target.files[0]) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = (event) => {
+                        document.getElementById('profileImage').src = event.target.result;
+                    };
+                    
+                    reader.readAsDataURL(e.target.files[0]);
+                }
+            });
+            
+            // Setup tag and preference selection
+            document.querySelectorAll('.tag, .preference-option').forEach(item => {
+                item.addEventListener('click', function() {
+                    const checkbox = this.querySelector('input[type="checkbox"]');
+                    checkbox.checked = !checkbox.checked;
+                    
+                    if (checkbox.checked) {
+                        this.classList.add('selected');
+                    } else {
+                        this.classList.remove('selected');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

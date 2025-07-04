@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - KARE SPHERE</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-left">
+                <h2>KARE SPHERE</h2>
+            </div>
+            <div class="nav-right">
+                <div class="user-info">
+                    <div class="user-profile">
+                        <img src="" alt="Profile" id="userProfilePic" class="profile-pic">
+                        <div class="user-details">
+                            <span id="userName" class="user-name"></span>
+                            <span id="userDepartment" class="user-department"></span>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="dashboard.html">Dashboard</a>
+                            <a href="javascript:void(0)" onclick="signOut()">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-header">
+            <div class="header-content">
+                <h1>Edit Profile</h1>
+                <p>Update your profile information</p>
+            </div>
+            <a href="dashboard.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+
+        <div class="profile-edit-container">
+            <div class="profile-section">
+                <h2>Basic Information</h2>
+                <div class="profile-form">
+                    <div class="profile-picture-upload">
+                        <div class="picture-preview" id="picturePreview">
+                            <img src="" alt="Profile Picture" id="profileImagePreview">
+                            <div class="upload-overlay">
+                                <i class="fas fa-camera"></i>
+                                <span>Change Photo</span>
+                            </div>
+                        </div>
+                        <input type="file" id="profilePicture" accept="image/*" hidden>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-input" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department" class="form-input">
+                            <option value="CSE">Computer Science Engineering</option>
+                            <option value="ECE">Electronics & Communication Engineering</option>
+                            <option value="MECH">Mechanical Engineering</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="BME">Bio-Medical Engineering</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="year">Year of Study</label>
+                        <select id="year" class="form-input">
+                            <option value="1">First Year</option>
+                            <option value="2">Second Year</option>
+                            <option value="3">Third Year</option>
+                            <option value="4">Fourth Year</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h2>Interests</h2>
+                <div class="interests-grid">
+                    <div class="interest-category">
+                        <h3>Technical</h3>
+                        <div class="interest-tags" id="technicalInterests">
+                            <label class="tag"><input type="checkbox" value="programming"> Programming</label>
+                            <label class="tag"><input type="checkbox" value="ai-ml"> AI & ML</label>
+                            <label class="tag"><input type="checkbox" value="web-dev"> Web Development</label>
+                            <label class="tag"><input type="checkbox" value="cybersecurity"> Cybersecurity</label>
+                            <label class="tag"><input type="checkbox" value="robotics"> Robotics</label>
+                        </div>
+                    </div>
+
+                    <div class="interest-category">
+                        <h3>Non-Technical</h3>
+                        <div class="interest-tags" id="nonTechnicalInterests">
+                            <label class="tag"><input type="checkbox" value="sports"> Sports</label>
+                            <label class="tag"><input type="checkbox" value="arts"> Arts</label>
+                            <label class="tag"><input type="checkbox" value="literature"> Literature</label>
+                            <label class="tag"><input type="checkbox" value="music"> Music</label>
+                            <label class="tag"><input type="checkbox" value="photography"> Photography</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h2>Preferences</h2>
+                <div class="preferences-form">
+                    <div class="preference-group">
+                        <h3>Content Preferences</h3>
+                        <div class="preference-options" id="contentPreferences">
+                            <label class="preference-option">
+                                <input type="checkbox" value="events">
+                                <span>College Events</span>
+                            </label>
+                            <label class="preference-option">
+                                <input type="checkbox" value="workshops">
+                                <span>Technical Workshops</span>
+                            </label>
+                            <label class="preference-option">
+                                <input type="checkbox" value="internships">
+                                <span>Internship Opportunities</span>
+                            </label>
+                            <label class="preference-option">
+                                <input type="checkbox" value="projects">
+                                <span>Project Collaborations</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="notification-preferences">
+                        <h3>Notification Preferences</h3>
+                        <div class="notification-options">
+                            <label class="switch">
+                                <input type="checkbox" id="emailNotifications">
+                                <span class="slider"></span>
+                                <span class="label">Email Notifications</span>
+                            </label>
+                            <label class="switch">
+                                <input type="checkbox" id="eventReminders">
+                                <span class="slider"></span>
+                                <span class="label">Event Reminders</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button class="btn secondary" onclick="resetForm()">Reset Changes</button>
+                <button class="btn primary" onclick="saveChanges()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/db-service.js"></script>
+    <script src="js/profile-edit.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html> 

@@ -1,0 +1,230 @@
+:root {
+    --primary: #4f46e5;
+    --secondary: #0ea5e9;
+    --success: #22c55e;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --background: #f8fafc;
+    --card: #ffffff;
+}
+
+.career-guidance-container {
+    min-height: 100vh;
+    background: var(--background);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 4rem 0 6rem;
+    color: white;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Search Section */
+.search-section {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.search-bar {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    outline: none;
+    color: var(--text);
+}
+
+.search-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background: var(--secondary);
+}
+
+/* Filter Tags */
+.filter-tags {
+    display: none;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: -3rem;
+    padding: 0 1rem;
+}
+
+/* Roadmaps Section */
+.roadmaps-section {
+    margin-top: 3rem;
+    padding: 0 2rem;
+}
+
+.roadmaps-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+.roadmaps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.roadmap-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.roadmap-card:hover {
+    transform: translateY(-5px);
+}
+
+.roadmap-card h3 {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(79, 70, 229, 0.1);
+}
+
+.roadmap-steps {
+    list-style: none;
+    padding: 0;
+}
+
+.roadmap-steps li {
+    padding: 1rem 0;
+    color: var(--text-light);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.roadmap-steps li:last-child {
+    border-bottom: none;
+}
+
+.roadmap-steps li::before {
+    content: "•";
+    color: var(--primary);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.learn-more-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background: var(--secondary);
+}
+
+/* Guidance Section */
+.guidance-section {
+    margin-top: 4rem;
+}
+
+.guidance-card {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 16px;
+    padding: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.guidance-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.guidance-card p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.schedule-btn {
+    background: white;
+    color: var(--primary);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.schedule-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0 5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .search-section {
+        padding: 0 1rem;
+    }
+
+    .guidance-card {
+        flex-direction: column;
+    }
+
+    .guidance-content {
+        padding: 2rem;
+    }
+} 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARE Shpere - Login</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body class="login-page">
+    <div class="login-background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="container">
+        <div class="login-container">
+            <div class="login-content">
+                <div class="login-header">
+                    <img src="Logo.png" alt="KARE Logo" class="logo">
+                    <h1>Welcome to KARE SPHERE</h1>
+                    <p class="subtitle">Sign in with your college email</p>
+                </div>
+                
+                <div class="login-box">
+                    <div class="login-options">
+                        <div id="g_id_onload"
+                             data-client_id="1048859318092-ikf792r4l9mb4ctobr6m5h6velfevote.apps.googleusercontent.com"
+                             data-callback="handleCredentialResponse"
+                             data-auto_select="true"
+                             data-context="signin"
+                             data-itp_support="true"
+                             data-hd="klu.ac.in">
+                        </div>
+
+                        <div class="g_id_signin custom-google-button"
+                             data-type="standard"
+                             data-shape="rectangular"
+                             data-theme="outline"
+                             data-text="continue_with"
+                             data-size="large"
+                             data-width="300"
+                             data-logo_alignment="left">
+                        </div>
+                    </div>
+
+                    <div class="login-message">
+                        <p class="info-text">Only @klu.ac.in email addresses are allowed</p>
+                        <p class="error-message" id="errorMessage"></p>
+                    </div>
+
+                    <div class="login-footer">
+                        <p>By signing in, you agree to our</p>
+                        <div class="footer-links">
+                            <a href="#">Terms of Service</a> • 
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                        <a href="admin-login.html" class="admin-link">Admin Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/db-service.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html> 

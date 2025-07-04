@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance - KARE SPHERE</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/career-guidance.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-left">
+                <h2>KARE SPHERE</h2>
+            </div>
+            <div class="nav-right">
+                <div class="user-info">
+                    <div class="user-profile">
+                        <img src="" alt="Profile" id="userProfilePic" class="profile-pic">
+                        <div class="user-details">
+                            <span id="userName" class="user-name"></span>
+                            <span id="userDepartment" class="user-department"></span>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="dashboard.html">Dashboard</a>
+                            <a href="profile-edit.html">Edit Profile</a>
+                            <a href="javascript:void(0)" onclick="signOut()">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="career-guidance-container">
+        <div class="hero-section">
+            <div class="container">
+                <h1>Career Guidance</h1>
+                <p>Explore career paths and find your perfect fit</p>
+                
+                <div class="search-section">
+                    <div class="search-bar">
+                        <input type="text" id="careerSearch" placeholder="Search for career paths, skills, or industries...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container main-content">
+            <section class="roadmaps-section">
+                <h2>Career Roadmaps</h2>
+                <div class="roadmaps-grid" id="roadmapsGrid">
+                    <!-- Web Development -->
+                    <div class="roadmap-card">
+                        <h3>Web Development</h3>
+                        <ul class="roadmap-steps">
+                            <li>HTML, CSS, JavaScript basics</li>
+                            <li>Modern JavaScript (ES6+)</li>
+                            <li>React/Next.js</li>
+                            <li>State Management</li>
+                            <li>Testing & Deployment</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend Development -->
+                    <div class="roadmap-card">
+                        <h3>Backend Development</h3>
+                        <ul class="roadmap-steps">
+                            <li>Programming Language (Python/Node.js)</li>
+                            <li>Databases (SQL/NoSQL)</li>
+                            <li>APIs & REST</li>
+                            <li>Server Management</li>
+                            <li>Security & Authentication</li>
+                        </ul>
+                    </div>
+
+                    <!-- Data Science -->
+                    <div class="roadmap-card">
+                        <h3>Data Science</h3>
+                        <ul class="roadmap-steps">
+                            <li>Statistics & Mathematics</li>
+                            <li>Python for Data Analysis</li>
+                            <li>Data Visualization</li>
+                            <li>Machine Learning Basics</li>
+                            <li>Big Data Tools</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cybersecurity -->
+                    <div class="roadmap-card">
+                        <h3>Cybersecurity</h3>
+                        <ul class="roadmap-steps">
+                            <li>Network Fundamentals</li>
+                            <li>Security Protocols</li>
+                            <li>Penetration Testing</li>
+                            <li>Security Tools</li>
+                            <li>Incident Response</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="guidance-section">
+                <div class="guidance-card">
+                    <div class="guidance-content">
+                        <h2>Need Personalized Guidance?</h2>
+                        <p>Schedule a one-on-one session with our career counselors</p>
+                        <button class="schedule-btn" onclick="openCalendlyPopup()">Schedule Session</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Calendly Widget Script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-button" onclick="toggleChat()">
+            <div class="chatbot-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-label">
+                KARE Assistant
+            </div>
+        </div>
+        
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fas fa-robot"></i>
+                    KARE Assistant
+                </div>
+                <button class="close-chat" onclick="toggleChat()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be added here -->
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/career-guidance.js"></script>
+    <script src="js/career.js"></script>
+    <script src="js/chatbot.js"></script>
+
+    <!-- Add this right after the header scripts -->
+    <script>
+        // Check if Calendly loads properly
+        window.addEventListener('load', function() {
+            if (typeof Calendly === 'undefined') {
+                console.error('Calendly failed to load');
+                document.querySelector('.schedule-action .btn').disabled = true;
+                document.querySelector('.schedule-note').innerHTML = 
+                    '<span style="color: #d32f2f;">Unable to load scheduling system. Please refresh the page.</span>';
+            }
+        });
+
+        // Define your Calendly URL as a constant
+        const CALENDLY_URL = 'https://calendly.com/9923008040-klu/hackathon';
+
+        // Option 1: Direct link to Calendly (new tab)
+        function openCalendlyScheduler() {
+            window.open(CALENDLY_URL, '_blank');
+        }
+
+        // Option 2: Popup widget (current implementation)
+        function openCalendlyPopup() {
+            try {
+                const button = document.querySelector('.schedule-action .btn');
+                button.disabled = true;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                
+                Calendly.initPopupWidget({
+                    url: CALENDLY_URL,
+                    prefill: {
+                        name: document.getElementById('userName').textContent,
+                        email: sessionStorage.getItem('userEmail')
+                    },
+                    text: 'Schedule time with counselor',
+                    color: '#1967d2',
+                    textColor: '#ffffff',
+                    branding: false
+                });
+
+                setTimeout(() => {
+                    button.disabled = false;
+                    button.innerHTML = '<i class="fas fa-calendar-alt"></i> Schedule a Consultation';
+                }, 1000);
+            } catch (error) {
+                console.error('Error opening Calendly:', error);
+                // Fallback to direct link if popup fails
+                window.open(CALENDLY_URL, '_blank');
+            }
+        }
+    </script>
+</body>
+</html> 

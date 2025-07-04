@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs - KARE SPHERE</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/clubs.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-left">
+                <h2>KARE SPHERE</h2>
+            </div>
+            <div class="nav-right">
+                <div class="user-info">
+                    <div class="user-profile">
+                        <img src="" alt="Profile" id="userProfilePic" class="profile-pic">
+                        <div class="user-details">
+                            <span id="userName" class="user-name"></span>
+                            <span id="userDepartment" class="user-department"></span>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="dashboard.html">Dashboard</a>
+                            <a href="profile-edit.html">Edit Profile</a>
+                            <a href="javascript:void(0)" onclick="signOut()">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="clubs-header">
+            <div class="header-content">
+                <h1>Student Clubs</h1>
+                <p>Join and explore various clubs to enhance your college experience</p>
+            </div>
+            <a href="dashboard.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+
+        <div class="clubs-filters">
+            <div class="search-bar">
+                <input type="text" id="clubSearch" placeholder="Search clubs...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Clubs</button>
+                <button class="filter-btn" data-filter="technical">Technical</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+            </div>
+        </div>
+
+        <div class="clubs-grid" id="clubsGrid">
+            <!-- Clubs will be populated here -->
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/clubs.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html> 

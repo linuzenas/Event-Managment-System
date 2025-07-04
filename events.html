@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - KARE SPHERE</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/events.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-left">
+                <h2>KARE SPHERE</h2>
+            </div>
+            <div class="nav-right">
+                <div class="user-info">
+                    <div class="user-profile">
+                        <img src="" alt="Profile" id="userProfilePic" class="profile-pic">
+                        <div class="user-details">
+                            <span id="userName" class="user-name"></span>
+                            <span id="userDepartment" class="user-department"></span>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="dashboard.html">Dashboard</a>
+                            <a href="profile-edit.html">Edit Profile</a>
+                            <a href="javascript:void(0)" onclick="signOut()">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="events-header">
+            <div class="header-content">
+                <h1>College Events</h1>
+                <p>Discover and participate in upcoming and ongoing events</p>
+            </div>
+            <a href="dashboard.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+
+        <div class="events-filters">
+            <div class="search-bar">
+                <input type="text" id="eventSearch" placeholder="Search events...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+                <button class="filter-btn" data-filter="technical">Technical</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+            </div>
+        </div>
+
+        <div class="events-timeline">
+            <h2>This Month</h2>
+            <div class="events-grid" id="currentEvents"></div>
+
+            <h2>Upcoming Events</h2>
+            <div class="events-grid" id="upcomingEvents"></div>
+        </div>
+
+        <!-- Calendar View Toggle -->
+        <div class="view-toggle">
+            <button class="view-btn active" data-view="grid">
+                <i class="fas fa-th"></i> Grid View
+            </button>
+            <button class="view-btn" data-view="calendar">
+                <i class="fas fa-calendar-alt"></i> Calendar View
+            </button>
+        </div>
+
+        <!-- Calendar View (Initially Hidden) -->
+        <div class="calendar-view hidden" id="calendarView">
+            <!-- Calendar will be rendered here -->
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html> 
